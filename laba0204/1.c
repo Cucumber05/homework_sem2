@@ -1,4 +1,5 @@
-#include  <stdio.h>
+#define _CRT_SECURE_NO_WARNINGS // для возможности использования scanf
+#include <stdio.h>
 #include  <stdlib.h>
 //#include <locate.h>
 
@@ -7,8 +8,15 @@ int Vertical(double, double);
 int Horizontal(double, double);
 
 int main() {
-    double x = 5.;
-    double y = -6.;
+    double x;
+    system("chcp 1251"); // переходим в консоли на русский язык
+    system("cls");       // очищаем окно консоли
+    printf("Введите x: "); // выводим сообщение
+    scanf("%f", &x);     // вводим значения переменной x
+
+    double y;
+    printf("Введите : "); // выводим сообщение
+    scanf("%f", &y);     // вводим значения переменной y
     /*
 #зона 1
     double x = 3.;
