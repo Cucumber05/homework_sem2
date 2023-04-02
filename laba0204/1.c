@@ -48,10 +48,10 @@ int main() {
 #зона 10
     double x = 5.;
     double y = 5.;
-
+//зоны я отдельно на скрине подписала
     */
     printf("%lf", ((Vertical(x,y) && Horizontal(x,y))|| Bissectrice(x,y)));
-
+    printf("%lf", (Circle(x,y)));
     return 0;
 }
 
@@ -76,6 +76,20 @@ int Horizontal(double x, double y){
     return result;
 }
 
+int Circle(double x, double y){
+    int result = -1;
+    if (((x*x + y*y >= 25) && (x<=5)) && (y<=5)){
+        if ((x>=0)&&(y>=0)){
+            result = 1;
+            
+        }
+    }
+    else{
+        result = 0;
+    }
+
+     return result;
+}
 /*
 input data: x,y
 output: 1,0
