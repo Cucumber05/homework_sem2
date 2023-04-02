@@ -1,37 +1,61 @@
-#define _CRT_SECURE_NO_WARNINGS
+
 #include <stdio.h>
 #include <stdlib.h>
+#include <locale.h>
 
-bool testInput(double x);
-int  strToInt(double x);
-int getInput();
+void getInput();
+int testInput(char* str);
+int strToInt(char* str);
+void printInt(int a);
 
 int main()
 {
-    x=1.2
-bool testInput(double x){
-    bool result = false;
-    if (int(x)==x){
-        result= true;
+    setlocale(LC_ALL, "Rus");
+    getInput();
+    return 0;
+}
+
+void getInput()
+{
+    char a[30];
+    for (int i = 0; i < 30; i++)
+    {
+    a[i] = 0;
     }
-    return result;
+    printf("Введите строку: ");
+    scanf_s("%s", &a, 29);
+    int bol = testInput(a);
+    if (bol) {
+        int coun = strToInt(a);
+        printInt(coun);
+    }
+}
+    
+    
+int testInput(char* str)
+{
+    for (int i = 0; str[i] != 0 && i < 20; i++) {
+        if (str[0] == '0' || str[0] == '-') continue;
+            if (!('0' < str[i] && str[i] <= '9')) { return 0;}
+ }
+    return 1;
 }
 
-int strToInt(double x){
-    return int(x);
+
+int strToInt(char* str)
+{
+    int am = 0, a = 0;
+    for (int i = 0; str[i] != 0 && i < 20; i++)
+    {
+        if (str[i] == '-') { am = 1;}
+        else a = a * 10 + (str[i] - '0');
+        }
+        if (am == 1) { a *= -1; }
+    return a;
 }
 
 
-int getInput(){
-char a[];
-  system("chcp 1251"); 
-  system("cls");       
-  printf("Введите: "); 
-  scanf("%f", &a);     
-  printf("Вы ввели: %s", a); 
-  getchar(); getchar();
-  return 0;
-}
-  
-
+void printInt(int a)
+{
+ printf("\n%d\n", a);
 }
