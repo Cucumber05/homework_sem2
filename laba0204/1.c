@@ -91,7 +91,5 @@ int Circle(double x, double y){
      return result;
 }
 /*
-input data: x,y
-output: 1,0
-
+как я поняла, тип переменной result было бы вполне целесообразно поменять на boolean, но я все таки не совсем поняла
 */
