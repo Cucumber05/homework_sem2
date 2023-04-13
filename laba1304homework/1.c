@@ -3,18 +3,24 @@
 
 
 int main(){
-    char word[20];
-    char symbol[1];
+    char word[20]; //a string from the user (for example 'qwerlluioasdfghjllll')
+    char symbol[1]; //symbol that user would like to check
     int k = 0;
-    printf("Введите строку (20): ");
-    scanf('%s',word);
+    printf("Введите строку (20 символов): ");
+    scanf("%s",word); //the string entered from the user
     printf("Какой символ проверить?: ");
-    scanf('%s',symbol);
+    scanf("%s",symbol); //user enter a symbol
     
-    for(int i; i<20; i++){
-
+    //the loop runs through each character of the string
+    for(int i=0; i<20; i++){
+        if (word[i] == symbol[0]){
+            k++;
+        }
+        else{
+            k=0;
+        }
     }
-
+    printf("Максимальная последовательность символа %s: %d", symbol, k); //output data
 
     return 0;
 
