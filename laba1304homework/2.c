@@ -9,6 +9,8 @@ int main()
     /*scanf("Enter count of row:%d", &row);
     scanf("Enter count of column:%d", &column);*/
     int arr[10][20];
+
+    //Filling the array with random numbers
     for (int i=0; i<row; i++){
         for (int j=0; j<column; j++){
             srand(42);
@@ -17,21 +19,26 @@ int main()
             }
         }
     }
+
+    //array output
+    printf("Array: \n");
     for(int i = 0; i < 10; i++) {
         for(int j = 0; j < 20; j++) {
             printf("%d ", arr[i][j]);
     }
     printf("\n");
 } 
+
     printf("Enter number, that u want to find:");
     scanf("%d", &numb);
-    Bubu(arr, numb, row, column);
+    Bubu(arr, numb, row, column); //call void
     
     return 0;
 }
 
 void Bubu(int arr[10][20], int numb, int row, int column){
-    int f=1;
+    int f=1; // flag(to check, if there no output)
+    //comparing each element of the array with the desired value from the user
         for (int i=0; i< row; i++){
             for (int j=0; j< column; j++){
                 if (arr[i][j]== numb){
