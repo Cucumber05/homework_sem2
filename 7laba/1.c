@@ -33,7 +33,7 @@ int main()
     swap=0;
     n=0;
 
-    printf("Enter number of elementsn");
+    printf("\nEnter number of elementsn");
     scanf("%d", &n);
     printf("Enter %d Numbersn", n);
     for (int i = 0; i < n; i++)
