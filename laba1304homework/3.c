@@ -67,6 +67,7 @@ void insert_in_array(int* a, int n, int newnum, int pos ){
  
     // print the updated array
     print_array(n, a);
+
 }
 
 
