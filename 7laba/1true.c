@@ -8,9 +8,9 @@ void Output(char words[][max_word_lenght]);
 void Bubble_sort(char words[][max_word_lenght]);
 void Comb_sort(char words[][max_word_lenght]);
 void Selection_sort(char words[][max_word_lenght]);
-
+//не получается время посчитать и почему когда все сортирвки вызываю ничего не работает...
 int main(){
-    clock_t start = clock();
+    //clock_t start = clock();
     char words[10][max_word_lenght],words2[10][max_word_lenght], words3[10][max_word_lenght] ;
     int i, number;
     printf("Enter 10 words:\n");
@@ -38,9 +38,9 @@ int main(){
         case 1: 
             Bubble_sort(words);
             Output(words);
-            clock_t end = clock();
-            double cpu_time_used = ((double) (end-start)) - CLOCKS_PER_SEC;
-            printf("Tme used function:%f sec\n", cpu_time_used);
+            //clock_t end = clock();
+            //double cpu_time_used = ((double) (end-start)) - CLOCKS_PER_SEC;
+            //printf("Tme used function:%f sec\n", cpu_time_used);
             break;
 
         case 2: 
