@@ -1,3 +1,14 @@
+///не то!!!!
+
+
+
+
+
+
+
+
+
+
 #include <stdio.h>
 #include <stdlib.h>
 
