@@ -1,13 +1,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+void Bubble_sort(char *word);
+
 int main()
 {
-    int a[100], n, position, swap, k;
-    printf("Enter number of elementsn");
-    scanf("%d", &n);
-    printf("Enter %d Numbersn", n);
+    char word[10];
+    int n =10, position, swap, k;
+    printf("");
+    for(int i =0; i<=10; i++){
+        scanf("/s", word[i]);
+    }
 
+    for(int i = 0; i < n; i++)
+        printf("%d ", word[i]);
+
+    Bubble_sort(word[]);
+    /*
     //Selection Sort
     for (int i = 0; i < n; i++)
         scanf("%d", &a[i]);
@@ -29,36 +39,30 @@ int main()
     for(int i = 0; i < n; i++)
         printf("%d ", a[i]);
     printf("\nk=%d", k); //number of itarations
-    k=0;
-    swap=0;
-    n=0;
 
-    printf("\nEnter number of elementsn");
-    scanf("%d", &n);
-    printf("Enter %d Numbersn", n);
-    for (int i = 0; i < n; i++)
-        scanf("%d", &a[i]);
 
     //Bubble sort
-    for (int c = 0 ; c < n - 1; c++)
-    {
-        for (int d = 0 ; d < n - c - 1; d++)
-        {
-        if (a[d] > a[d+1])
-        {
-            swap = a[d];
-            a[d] = a[d+1];
-            a[d+1] = swap;
-            k++;
-        }
-        }
-    }
+
 
     printf("\n Bubble Sorted list:\n");
 
     for (int c = 0; c < n; c++)
         printf("%d ", a[c]);
-    printf("\nk=%d", k); //number of itarations
+    printf("\nk=%d", k); //number of itarations*/
     return 0;
+
+}
+
+void Bubble_sort(char *word){
+    int * a;
+    for(int i =0; i<10; i++){
+        if (strcmp(word[i], word[i+1])>0){
+            a= &word[i];
+            &word[i] = &word[i+1];
+            &word[i+1] = a;
+
+
+        }
+    }
 
 }
