@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <time.h>
 #include <stdlib.h>
 #include <string.h>
 #define max_word_lenght 20
@@ -9,6 +10,7 @@ void Comb_sort(char words[][max_word_lenght]);
 void Selection_sort(char words[][max_word_lenght]);
 
 int main(){
+    clock_t start = clock();
     char words[10][max_word_lenght],words2[10][max_word_lenght], words3[10][max_word_lenght] ;
     int i, number;
     printf("Enter 10 words:\n");
@@ -25,10 +27,20 @@ int main(){
     }
     printf("Which sort you would like?:\n1: Bubble sort\n2: Selection sort\n3: Comb sort\n4: all sorts\n(enter only a number)");
     scanf("%d", &number);
+    Bubble_sort(words);
+    Output(words);
+    Selection_sort(words2);
+    Output(words2);
+    Comb_sort(words3);
+    Output(words3);
+            
     switch (number){
         case 1: 
             Bubble_sort(words);
             Output(words);
+            clock_t end = clock();
+            double cpu_time_used = ((double) (end-start)) - CLOCKS_PER_SEC;
+            printf("Tme used function:%f sec\n", cpu_time_used);
             break;
 
         case 2: 
@@ -121,3 +133,5 @@ void Selection_sort(char words[][max_word_lenght]){
             }
     }
 }
+
+
