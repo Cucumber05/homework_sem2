@@ -9,17 +9,55 @@ void Comb_sort(char words[][max_word_lenght]);
 void Selection_sort(char words[][max_word_lenght]);
 
 int main(){
-    char words[10][max_word_lenght];
-    int i, j;
+    char words[10][max_word_lenght],words2[10][max_word_lenght], words3[10][max_word_lenght] ;
+    int i, number;
     printf("Enter 10 words:\n");
     for (i=0; i<10; i++){
         printf("%d:", i+1);
         scanf("%s", words[i]);
     }
     
-    Bubble_sort(words);
+    for (int i=0; i<10; i++){
+        words2[i][max_word_lenght]= words[i][max_word_lenght];
+    }
+    for (int i=0; i<10; i++){
+        words3[i][max_word_lenght]= words[i][max_word_lenght];
+    }
+    printf("Which sort you would like?:\n1: Bubble sort\n2: Selection sort\n3: Comb sort\n4: all sorts\n(enter only a number)");
+    scanf("%d", &number);
+    switch (number){
+        case 1: 
+            Bubble_sort(words);
+            Output(words);
+            break;
 
-    Output(words);
+        case 2: 
+            Selection_sort(words);
+            Output(words);
+            break;
+
+        case 3: 
+            Comb_sort(words);
+            Output(words);
+            break;
+            
+        case 4:
+            Bubble_sort(words);
+            Output(words);
+            Selection_sort(words2);
+            Output(words2);
+            Comb_sort(words3);
+            Output(words3);
+            break;
+        
+        default:
+            printf("I didnt understand what did you mean");
+            break;
+
+    }
+    
+
+    
     return 0;
 
 }
@@ -71,13 +109,15 @@ void Comb_sort(char words[][max_word_lenght]){
 
 void Selection_sort(char words[][max_word_lenght]){
     int i, j, mini;
-    for (i=0; i<10; i++){
+    for (i=0; i<9; i++){
         mini = i;
-        for (j=0; j<10; j++){ 
-            if(strcmp(words[j], words[j+1])<0){
+        for (j=i+1; j<10; j++){ 
+            if(strcmp(words[j], words[mini])<0){
                 mini=j;
             }
-            swap(words[i], words[mini]);
         }
+        if (mini!=i){
+                swap(words[i], words[mini]);
+            }
     }
 }
