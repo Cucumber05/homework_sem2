@@ -9,8 +9,15 @@ int main()
     scanf("%s", source_file);
     printf("Введите имя итогового файла: ");
     scanf("%s", target_file);
-    source = fopen("source_file.txt", "rb");
-    target = fopen("target_file.txt", "wb");
-
+    source = fopen("source_file.txt", "r"); // открываем файл для чтения
+    target = fopen("target_file.txt", "w"); // открываем файл для записи
+        int c;
+    while ((c =fgetc(source)) !=EOF)  // end of file; Функция fgetc возвращает символ на который ссылается внутренний индикатор позиции файла указанного потока.
+    {
+        fputc(c, target); //Функция fputc записывает символ в поток и перемещает позицию индикатора положения.
+    }
+    fclose(source);
+    fclose(target);
+    printf("Файл скопирован\n");
     return 0;
 }
